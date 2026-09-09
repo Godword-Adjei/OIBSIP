@@ -1,0 +1,17 @@
+,dtype,null_count,null_pct,cardinality,sample_value
+id,int64,0,0.0,48895,2539
+name,str,16,0.03272318232948154,47905,Clean & quiet apt home by the park
+host_id,int64,0,0.0,37457,2787
+host_name,str,21,0.04294917680744453,11452,John
+neighbourhood_group,str,0,0.0,5,Brooklyn
+neighbourhood,str,0,0.0,221,Kensington
+latitude,float64,0,0.0,19048,40.64749
+longitude,float64,0,0.0,14718,-73.97237
+room_type,str,0,0.0,3,Private room
+price,int64,0,0.0,674,149
+minimum_nights,int64,0,0.0,109,1
+number_of_reviews,int64,0,0.0,394,9
+last_review,str,10052,20.55833929849678,1764,2018-10-19
+reviews_per_month,float64,10052,20.55833929849678,937,0.21
+calculated_host_listings_count,int64,0,0.0,47,6
+availability_365,int64,0,0.0,366,365

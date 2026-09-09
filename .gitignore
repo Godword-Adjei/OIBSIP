@@ -1,0 +1,15 @@
+# Virtual environments
+oibsip-env/
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw recordings / large media not meant for the repo
+*.mkv
+*.mp4
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
