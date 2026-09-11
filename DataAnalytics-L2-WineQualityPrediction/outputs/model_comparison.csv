@@ -1,0 +1,4 @@
+,Accuracy
+Random Forest,0.85
+SVC,0.7846153846153846
+SGD Classifier,0.7530769230769231
