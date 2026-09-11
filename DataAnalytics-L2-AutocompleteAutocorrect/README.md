@@ -15,8 +15,9 @@ Analyze the efficiency and accuracy of autocomplete and autocorrect algorithms u
 | | |
 |---|---|
 | Source | NLTK's built-in Project Gutenberg corpus (public-domain classic literature — Austen, Shakespeare, Melville, and others) |
-| Loading | Downloaded automatically via `nltk.download("gutenberg")` — no manual file needed |
-| Corpus size | ~2.6 million tokens after cleaning (alphabetic tokens only) |
+| Raw files | data/ — 18 source texts (887KB–4.3MB each, 11.8MB total), exported directly from `nltk.corpus.gutenberg` for transparency/offline reproducibility |
+| Loading | The notebook itself still fetches the corpus via `nltk.download("gutenberg")` at runtime (auto-downloads on first run) — the files in `data/` are an exact copy of what that call retrieves |
+| Corpus size | ~2.1 million tokens after cleaning (alphabetic tokens only) |
 
 ## Tools
 
@@ -66,7 +67,7 @@ This project demonstrates the core mechanisms, but production tools like Google 
 DataAnalytics-L2-AutocompleteAutocorrect/
 ├── AutocompleteAutocorrect.ipynb   # main notebook
 ├── README.md
-├── data/                            # empty — corpus loads via nltk.download(), no manual file needed
+├── data/                            # 18 raw Gutenberg text files (auto-fetched by the notebook too)
 └── outputs/
     ├── autocomplete_results.csv
     ├── autocorrect_results.csv
