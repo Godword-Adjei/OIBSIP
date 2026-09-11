@@ -49,10 +49,12 @@ Python · NLTK (tokenization, n-grams) · pyspellchecker · pandas · Matplotlib
 
 | Method | Accuracy |
 |---|---|
-| **pyspellchecker** (frequency-weighted) | **65%** |
-| Custom Levenshtein (distance-only) | 40% |
+| **pyspellchecker** (frequency-weighted) | **75%** |
+| Custom Levenshtein (distance-only) | 65% |
 
-**Key finding:** frequency weighting matters — when multiple candidate corrections are within the same edit distance, picking the more common word in the corpus resolves ambiguity that pure edit-distance cannot, which explains the 25-point accuracy gap between the two methods.
+**Key finding:** frequency weighting helps but doesn't dominate — pyspellchecker's edge comes from breaking edit-distance ties using word frequency (e.g. for "adress", both "address" and "dress" are one edit away; frequency favors the wrong one here, showing this isn't a guaranteed win). The larger remaining error source for *both* methods is words with genuine ties at distance 1 with no frequency signal to break them correctly (e.g. "familys" → "family" instead of "families", "childs" → "child" instead of "children") — a structural limitation of edit-distance-based correction, not something either method's tie-breaking rule can fully fix.
+
+**Note on test-set design:** four originally-planned test words (`untill`, `frend`, `comming`, `truely`) were replaced after discovering they are archaic-but-valid spelling variants that actually occur in this 19th-century corpus (e.g. "comming" appears 13 times) — both methods would have "correctly" left them unchanged relative to their own reference vocabulary, which would have deflated both accuracy scores for a reason unrelated to the algorithms being compared. The notebook verifies each replacement word is absent from the corpus vocabulary before using it. Also fixed: the custom method originally broke edit-distance ties using Python's randomized set iteration order, making results non-reproducible between runs — it now iterates the vocabulary in sorted order for a deterministic (if still imperfect) tie-break.
 
 ## Limitations vs. production systems
 
