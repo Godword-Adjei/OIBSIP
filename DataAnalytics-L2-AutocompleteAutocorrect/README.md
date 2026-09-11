@@ -87,6 +87,6 @@ Then Cell → Run All. (NLTK will auto-download the Gutenberg corpus on first ru
 
 ## Demo video
 
-(paste your LinkedIn post URL here)
+
 
 #oasisinfobyte

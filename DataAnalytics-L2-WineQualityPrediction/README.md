@@ -76,6 +76,4 @@ Then Cell → Run All.
 
 ## Demo video
 
-(paste your LinkedIn post URL here)
-
 #oasisinfobyte
